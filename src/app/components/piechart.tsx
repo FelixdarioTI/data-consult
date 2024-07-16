@@ -2,7 +2,6 @@
 
 import React from 'react';
 import { PieChart, Pie, Tooltip, ResponsiveContainer,Legend,TooltipProps } from 'recharts';
- import { buscarClientes } from '../../../api'
 export const PieGraph = () => {
   
   const data = [
