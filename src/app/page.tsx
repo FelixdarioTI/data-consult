@@ -51,7 +51,7 @@ function Home() {
         <div className="mt-36 mr-36" id="modal-login">
           <div className="">
             <div className="mx-auto text-center">
-              <h1 className="text-2xl font-bold sm:text-3xl dark:text-white">Bem Vindo!</h1>
+              <h1 className="text-2xl font-bold sm:text-3xl dark:text-gray-500">Bem Vindo!</h1>
               <p className="mt-4 text-gray-600 dark:text-slate-400">Faça seu login!</p>
             </div>
             <div>
