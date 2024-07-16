@@ -12,13 +12,11 @@ const usuarioService = new UsuarioService();
 export default function Menu() {
   const [isAuthenticated, setIsAuthenticated] = useState(false);
   const [isLoading, setIsLoading] = useState(true);
-  const [userId, setUserId] = useState<number | null>(null);
   const router = useRouter();
 
   useEffect(() => {
-    const storedUserId = localStorage.getItem('userId');
-    if (storedUserId) {
-      setUserId(parseInt(storedUserId));
+    const token = localStorage.getItem('token');
+    if (token) {
       setTimeout(() => {
         setIsAuthenticated(true);
         setIsLoading(false);
@@ -33,31 +31,27 @@ export default function Menu() {
   const [editData, setEditData] = useState({ nome: "", email: "", senha: "", role: "" });
 
   const handleUpdate = () => {
-    if (userId) {
-      usuarioService.Atualizar(userId, editData)
-        .then(response => {
-          console.log("Atualizado com sucesso");
-          setIsEditModalOpen(false);
-        })
-        .catch(error => {
-          console.error("Erro ao atualizar:", error);
-        });
-    }
+    usuarioService.Atualizar(editData)
+      .then(response => {
+        console.log("Atualizado com sucesso");
+        setIsEditModalOpen(false);
+      })
+      .catch(error => {
+        console.error("Erro ao atualizar:", error);
+      });
   };
 
   const handleDelete = () => {
-    if (userId) {
-      usuarioService.Excluir(userId)
-        .then(response => {
-          console.log("Excluído com sucesso");
-          setIsModalOpen(false);
-          localStorage.removeItem('userId');
-          router.push('/');
-        })
-        .catch(error => {
-          console.error("Erro ao excluir:", error);
-        });
-    }
+    usuarioService.Excluir()
+      .then(response => {
+        console.log("Excluído com sucesso");
+        setIsModalOpen(false);
+        localStorage.removeItem('token');
+        router.push('/');
+      })
+      .catch(error => {
+        console.error("Erro ao excluir:", error);
+      });
   };
 
   if (isLoading) {

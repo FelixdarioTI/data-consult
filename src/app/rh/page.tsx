@@ -23,9 +23,10 @@ export default function Menu(){
   const [isLoading, setIsLoading] = useState(true);
   const router = useRouter();
 
+ 
   useEffect(() => {
-    const userId = localStorage.getItem('userId');
-    if (userId) {
+    const token = localStorage.getItem('token');
+    if (token) {
       setTimeout(() => {
         setIsAuthenticated(true);
         setIsLoading(false);
@@ -34,6 +35,7 @@ export default function Menu(){
       router.push('/');
     }
   }, [router]);
+
  
     const [isChecked, setIsChecked] = useState(false);
     const [isChecked2, setIsChecked2] = useState(false);

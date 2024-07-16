@@ -10,31 +10,29 @@ import { useRouter } from "next/navigation";
 const usuarioService = new UsuarioService();
 
 function Home() {
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
-  const [error, setError] = useState("");
   const [showPassword, setShowPassword] = useState(false);
-  const router = useRouter(); 
-
+  const [email, setEmail] = useState("");
+  const [senha, setSenha] = useState("");
+  const [error, setError] = useState("");
+  const router = useRouter();
   const togglePasswordVisibility = () => {
     setShowPassword(!showPassword);
   };
-
   const handleLogin = (e: { preventDefault: () => void; }) => {
     e.preventDefault();
-    const credentials = {
+    const credentials = { 
       email: email,
-      senha: password
+      senha: senha 
     };
 
     usuarioService.login(credentials)
     .then(response => {
-      const userId = response.data.id;
-      localStorage.setItem('userId', userId.toString());
+      const token = response.data.token; 
+      localStorage.setItem('token', token);
       router.push('/bne');
     })
-      .catch((error) => {
-        setError(error.response ? error.response.data.message : "Erro ao fazer login");
+      .catch(error => {
+        setError("Erro ao fazer login");
       });
   };
 
@@ -72,8 +70,8 @@ function Home() {
                     placeholder="exemplo@exemplo.com"
                     className="rounded-lg border-gray-300 p-4 min-w-64 w-full text-sm shadow-sm focus:outline-none focus:ring-2 focus:ring-purple-400 focus:border-transparent dark:text-white dark:bg-gray-800"
                     type="email"
-                    value={email}
-                    onChange={(e) => setEmail(e.target.value)}
+                    value={email} 
+                    onChange={(e) => setEmail(e.target.value)} 
                   />
                 </div>
                 <div className="relative">
@@ -81,8 +79,8 @@ function Home() {
                   <input
                     placeholder="***********"
                     className="rounded-lg border-gray-300 p-4 w-full text-sm shadow-sm focus:outline-none focus:ring-2 focus:ring-purple-400 focus:border-transparent dark:text-white dark:bg-gray-800"
-                    value={password}
-                    onChange={(e) => setPassword(e.target.value)}
+                    value={senha} 
+                    onChange={(e) => setSenha(e.target.value)}
                     type={showPassword ? "text" : "password"}
                   />
                   <button
