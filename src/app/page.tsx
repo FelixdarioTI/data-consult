@@ -26,11 +26,12 @@ function Home() {
     };
 
     usuarioService.login(credentials)
-    .then(response => {
-      const token = response.data.token; 
-      localStorage.setItem('token', token);
-      router.push('/bne');
-    })
+      .then(response => {
+        const { token, usuario } = response.data; 
+        localStorage.setItem('token', token);
+        localStorage.setItem('user', JSON.stringify(usuario));
+        router.push('/bne');
+      })
       .catch(error => {
         setError("Erro ao fazer login");
       });

@@ -1,6 +1,7 @@
 'use client'
 import React, { useState, useEffect } from "react";
 import Logo from "../images/logo.png";
+import LogoLoader from "../images/logoloader.png";
 import UserPerfil from "../images/perfil-teste.jpg"
 import { LineGraph } from "../components/linegraph";
 import { BarChart } from "../components/barchart";
@@ -64,15 +65,13 @@ export default function Menu() {
 
   if (isLoading) {
     return (
-      <div className="flex items-center justify-center h-screen">
-        <div
-          className="p-3 animate-spin drop-shadow-2xl bg-gradient-to-bl from-pink-400 via-purple-400 to-indigo-600 w-24 h-24 aspect-square rounded-full"
-        >
-          <div
-            className="rounded-full h-full w-full bg-slate-100 dark:bg-zinc-900 background-blur-md"
-          ></div>
+      <div className="flex items-center justify-center min-h-screen">
+      <div className="flex-col gap-4 w-full flex items-center justify-center">
+        <div className="w-28 h-28 border-8 text-purple-400 text-4xl animate-spin border-gray-300 flex items-center justify-center border-t-purple-400 rounded-full">
+          <img src={LogoLoader.src} className="w-16 h-16" alt="Logo Loader" />
         </div>
       </div>
+    </div>
     );
   }
     return(
