@@ -1,6 +1,6 @@
 'use client'
 import Logo from "../images/logo.png";
-import { BarChart3, PieChart, AreaChart, BarChartBig, User, UserX } from "lucide-react";
+import { BarChart3, PieChart, AreaChart, BarChartBig, User, UserX, BarChart4, BarChartHorizontal, BarChartHorizontalBig, CandlestickChart } from "lucide-react";
 import React, { useState, useEffect } from 'react';
 import { ModeToggle } from "@/components/toggle";
 import { useRouter } from "next/navigation";
@@ -256,51 +256,77 @@ export default function Menu() {
         </nav>
 
         <aside id="logo-sidebar" className="fixed top-8 left-0 z-40 w-64 h-screen pt-20 transition-transform -translate-x-full bg-white border-r border-gray-200 sm:translate-x-0 dark:bg-slate-950 dark:border-gray-700" aria-label="Sidebar">
-          <div className="h-full px-3 pb-4 overflow-y-auto bg-white dark:bg-slate-950">
-            <ul className="space-y-2 font-medium">
-              <li>
-                <a href="/bne" className="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group">
-                  <div className="text-purple-500 transition duration-75 dark:text-gray-400 group-hover:text-purple-600 dark:group-hover:text-purple-500">
-                    <BarChart3 />
+   <div className="h-full px-3 pb-4 overflow-y-auto bg-white dark:bg-slate-950">
+      <ul className="space-y-2 font-medium">
+         <li>
+            <a href="/bne-cia" className="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group">
+               <div className="text-purple-500 transition duration-75 dark:text-gray-400 group-hover:text-purple-600 dark:group-hover:text-purple-500">
+                  <BarChart3/>
                   </div>
-                  <span className="ms-3">Bne</span>
-                </a>
-              </li>
-              <li>
-                <a href="/lugarh" className="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group">
-                  <div className="text-purple-500 transition duration-75 dark:text-gray-400 group-hover:text-purple-600 dark:group-hover:text-purple-500">
-                    <AreaChart />
+               <span className="ms-3">Bne - Cia</span>
+            </a>
+         </li>
+         <li>
+            <a href="/bne-vip" className="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group">
+               <div className="text-purple-500 transition duration-75 dark:text-gray-400 group-hover:text-purple-600 dark:group-hover:text-purple-500">
+               <BarChart4 />
                   </div>
-                  <span className="flex-1 ms-3 whitespace-nowrap">LugarH</span>
-                </a>
-              </li>
-              <li>
-                <a href="/rh" className="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group">
-                  <div className="text-purple-500 transition duration-75 dark:text-gray-400 group-hover:text-purple-600 dark:group-hover:text-purple-500">
-                    <BarChartBig />
+               <span className="ms-3">Bne - Vip</span>
+            </a>
+         </li>
+         <li>
+            <a href="/uemp" className="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group">
+               <div className="text-purple-500 transition duration-75 dark:text-gray-400 group-hover:text-purple-600 dark:group-hover:text-purple-500">
+               <BarChartHorizontalBig />
                   </div>
-                  <span className="flex-1 ms-3 whitespace-nowrap">RH</span>
-                </a>
-              </li>
-              <li>
-                <a href="/tbr" className="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group">
-                  <div className="text-purple-500 transition duration-75 dark:text-gray-400 group-hover:text-purple-600 dark:group-hover:text-purple-500">
-                    <PieChart />
+               <span className="ms-3">Uemp</span>
+            </a>
+         </li>
+         <li>
+            <a href="/lugarh" className="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group">
+            <div className="text-purple-500 transition duration-75 dark:text-gray-400 group-hover:text-purple-600 dark:group-hover:text-purple-500">
+                  <AreaChart/>
                   </div>
-                  <span className="flex-1 ms-3 whitespace-nowrap">Trabalha Brasil</span>
-                </a>
-              </li>
-              <li>
-                <a href="/user" className="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group">
-                  <div className="text-purple-500 transition duration-75 dark:text-gray-400 group-hover:text-purple-600 dark:group-hover:text-purple-500">
-                    <User />
+               <span className="flex-1 ms-3 whitespace-nowrap">LugarH</span>
+            </a>
+         </li>
+         <li>
+            <a href="/ats" className="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group">
+               <div className="text-purple-500 transition duration-75 dark:text-gray-400 group-hover:text-purple-600 dark:group-hover:text-purple-500">
+               <BarChartHorizontal />
                   </div>
-                  <span className="flex-1 ms-3 whitespace-nowrap">User</span>
-                </a>
-              </li>
-            </ul>
-          </div>
-        </aside>
+               <span className="ms-3">ATS</span>
+            </a>
+         </li>
+         <li>
+            <a href="/floox" className="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group">
+               <div className="text-purple-500 transition duration-75 dark:text-gray-400 group-hover:text-purple-600 dark:group-hover:text-purple-500">
+               <CandlestickChart />
+                  </div>
+               <span className="ms-3">Floox</span>
+            </a>
+         </li>
+         <li>
+            <a href="/tbr" className="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group">
+            <div className="text-purple-500 transition duration-75 dark:text-gray-400 group-hover:text-purple-600 dark:group-hover:text-purple-500">
+                  <PieChart/>
+                  </div>
+
+               <span className="flex-1 ms-3 whitespace-nowrap">Trabalha Brasil</span>
+            </a>
+         </li>
+         <li>
+            <a href="/user" className="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group">
+            <div className="text-purple-500 transition duration-75 dark:text-gray-400 group-hover:text-purple-600 dark:group-hover:text-purple-500">
+                  <User/>
+                  </div>
+
+               <span className="flex-1 ms-3 whitespace-nowrap">User</span>
+            </a>
+         </li>
+      </ul>
+   </div>
+</aside>
         <div className="p-4 sm:ml-64 dark:bg-slate-950 ">
           <div className="p-4 rounded-lg  mt-14">
           <div className='bg-white dark:bg-black'>

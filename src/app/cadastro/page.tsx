@@ -62,9 +62,6 @@ function Cadastro() {
       <div className="">
         <div className="flex flex-row justify-between">
           <img src={Logo.src} width={280} className="px-8 pt-4" alt="logo" />
-          <div className="pr-8 pt-8">
-            <ModeToggle />
-          </div>
         </div>
         <main className="font-mono flex flex-row justify-center mr-24" id="modal-body">
           <div className="mt-24 grow ml-32">

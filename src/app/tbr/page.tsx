@@ -9,7 +9,7 @@ import { useEffect, useState } from "react";
 import { ModeToggle } from "@/components/toggle";
 import { RadialBart } from "@/app/components/radialbartchart";
 import { Piepadding } from "@/app/components/piechartpadding";
-import { BarChart3,LineChart,PieChart,Check,X, AreaChart, BarChartBig,User} from "lucide-react"
+import { BarChart3,LineChart,PieChart,Check,X, AreaChart, BarChartBig,User, BarChart4, BarChartHorizontal, BarChartHorizontalBig, CandlestickChart} from "lucide-react"
 import { Button } from "@/components/ui/button"
 import {
   DropdownMenu,
@@ -114,9 +114,6 @@ export default function Menu(){
             </div>
             <div>
           <div className="flex items-center ms-3">
-          <div className="pr-8"> 
-               <ModeToggle/>
-            </div>
             <div>
          
                </div>
@@ -138,11 +135,27 @@ export default function Menu(){
    <div className="h-full px-3 pb-4 overflow-y-auto bg-white dark:bg-slate-950">
       <ul className="space-y-2 font-medium">
          <li>
-            <a href="/bne" className="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group">
+            <a href="/bne-cia" className="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group">
                <div className="text-purple-500 transition duration-75 dark:text-gray-400 group-hover:text-purple-600 dark:group-hover:text-purple-500">
                   <BarChart3/>
                   </div>
-               <span className="ms-3">Bne</span>
+               <span className="ms-3">Bne - Cia</span>
+            </a>
+         </li>
+         <li>
+            <a href="/bne-vip" className="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group">
+               <div className="text-purple-500 transition duration-75 dark:text-gray-400 group-hover:text-purple-600 dark:group-hover:text-purple-500">
+               <BarChart4 />
+                  </div>
+               <span className="ms-3">Bne - Vip</span>
+            </a>
+         </li>
+         <li>
+            <a href="/uemp" className="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group">
+               <div className="text-purple-500 transition duration-75 dark:text-gray-400 group-hover:text-purple-600 dark:group-hover:text-purple-500">
+               <BarChartHorizontalBig />
+                  </div>
+               <span className="ms-3">Uemp</span>
             </a>
          </li>
          <li>
@@ -154,12 +167,19 @@ export default function Menu(){
             </a>
          </li>
          <li>
-            <a href="/rh" className="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group">
-            <div className="text-purple-500 transition duration-75 dark:text-gray-400 group-hover:text-purple-600 dark:group-hover:text-purple-500">
-                  <BarChartBig/>
+            <a href="/ats" className="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group">
+               <div className="text-purple-500 transition duration-75 dark:text-gray-400 group-hover:text-purple-600 dark:group-hover:text-purple-500">
+               <BarChartHorizontal />
                   </div>
-
-               <span className="flex-1 ms-3 whitespace-nowrap">RH</span>
+               <span className="ms-3">ATS</span>
+            </a>
+         </li>
+         <li>
+            <a href="/floox" className="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group">
+               <div className="text-purple-500 transition duration-75 dark:text-gray-400 group-hover:text-purple-600 dark:group-hover:text-purple-500">
+               <CandlestickChart />
+                  </div>
+               <span className="ms-3">Floox</span>
             </a>
          </li>
          <li>

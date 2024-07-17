@@ -1,30 +1,32 @@
 'use client'
+import React, { useState, useEffect } from "react";
 import Logo from "../images/logo.png";
-import LogoLoader from "../images/logoloader.png"
+import LogoLoader from "../images/logoloader.png";
 import UserPerfil from "../images/perfil-teste.jpg"
 import { LineGraph } from "../components/linegraph";
 import { BarChart } from "../components/barchart";
 import { PieGraph } from "../components/piechart";
 import { AreaCharts } from "../components/areachart";
-import { useEffect, useState } from "react";
 import { ModeToggle } from "@/components/toggle";
 import { RadialBart } from "@/app/components/radialbartchart";
 import { Piepadding } from "@/app/components/piechartpadding";
-import { BarChart3,LineChart,PieChart,Check,X, AreaChart, BarChartBig,User, BarChart4, BarChartHorizontal, BarChartHorizontalBig, CandlestickChart} from "lucide-react"
-import { Button } from "@/components/ui/button"
+import { BarChart3, LineChart, PieChart, Check, X, AreaChart, BarChartBig, User, CandlestickChart, BarChartHorizontal, BarChartHorizontalBig, BarChart4 } from "lucide-react";
+import { Button } from "@/components/ui/button";
 import {
   DropdownMenu,
   DropdownMenuContent,
   DropdownMenuItem,
   DropdownMenuTrigger,
-} from "@/components/ui/dropdown-menu"
-import { useRouter } from "next/navigation";
+} from "@/components/ui/dropdown-menu";
+import { useRouter } from 'next/navigation';
+import { UsuarioService } from "../../../service/UsuarioService";
 
-export default function Menu(){
+const usuarioService = new UsuarioService();
+
+export default function Menu() {
   const [isAuthenticated, setIsAuthenticated] = useState(false);
   const [isLoading, setIsLoading] = useState(true);
   const router = useRouter();
-
 
   useEffect(() => {
     const token = localStorage.getItem('token');
@@ -38,39 +40,40 @@ export default function Menu(){
     }
   }, [router]);
 
-  
 
-    const [isChecked, setIsChecked] = useState(false);
-    const [isChecked2, setIsChecked2] = useState(false);
-    const [isChecked3, setIsChecked3] = useState(false);
-    const [isModalOpen1, setIsModalOpen1] = useState(true);
-    const [isModalOpen2, setIsModalOpen2] = useState(true);
-    const [isModalOpen3, setIsModalOpen3] = useState(true);
-    const toggleModal1 = () => {
-        setIsModalOpen1(!isModalOpen1);
-        setIsChecked(!isChecked);
-      };
-    
-      const toggleModal2 = () => {
-        setIsModalOpen2(!isModalOpen2);
-        setIsChecked2(!isChecked2);
-      };
-    
-      const toggleModal3 = () => {
-        setIsModalOpen3(!isModalOpen3);
-        setIsChecked3(!isChecked3);
-      };
-      if (isLoading) {
-        return (
-          <div className="flex items-center justify-center min-h-screen">
-          <div className="flex-col gap-4 w-full flex items-center justify-center">
-            <div className="w-28 h-28 border-8 text-purple-400 text-4xl animate-spin border-gray-300 flex items-center justify-center border-t-purple-400 rounded-full">
-              <img src={LogoLoader.src} className="w-16 h-16" alt="Logo Loader" />
-            </div>
-          </div>
+  const [isChecked, setIsChecked] = useState(false);
+  const [isChecked2, setIsChecked2] = useState(false);
+  const [isChecked3, setIsChecked3] = useState(false);
+  const [isModalOpen1, setIsModalOpen1] = useState(true);
+  const [isModalOpen2, setIsModalOpen2] = useState(true);
+  const [isModalOpen3, setIsModalOpen3] = useState(true);
+
+  const toggleModal1 = () => {
+    setIsModalOpen1(!isModalOpen1);
+    setIsChecked(!isChecked);
+  };
+
+  const toggleModal2 = () => {
+    setIsModalOpen2(!isModalOpen2);
+    setIsChecked2(!isChecked2);
+  };
+
+  const toggleModal3 = () => {
+    setIsModalOpen3(!isModalOpen3);
+    setIsChecked3(!isChecked3);
+  };
+
+  if (isLoading) {
+    return (
+      <div className="flex items-center justify-center min-h-screen">
+      <div className="flex-col gap-4 w-full flex items-center justify-center">
+        <div className="w-28 h-28 border-8 text-purple-400 text-4xl animate-spin border-gray-300 flex items-center justify-center border-t-purple-400 rounded-full">
+          <img src={LogoLoader.src} className="w-16 h-16" alt="Logo Loader" />
         </div>
-        );
-      }
+      </div>
+    </div>
+    );
+  }
     return(
 <>
 <div className="">
