@@ -81,7 +81,7 @@ export default function Menu() {
   <div className="px-3 py-3 lg:px-5 lg:pl-3">
     <div className="flex items-center justify-between">
       <div className="flex items-center justify-start rtl:justify-end">
-        <a href="/bne" className="flex ms-2 md:me-24">
+        <a href="/bne-cia" className="flex ms-2 md:me-24">
           <img src={Logo.src}  className="h-16 me-3" alt=" Logo" />
         </a>
       </div>
@@ -169,6 +169,15 @@ export default function Menu() {
                   <AreaChart/>
                   </div>
                <span className="flex-1 ms-3 whitespace-nowrap">LugarH</span>
+            </a>
+         </li>
+         <li>
+            <a href="/rh" className="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group">
+            <div className="text-purple-500 transition duration-75 dark:text-gray-400 group-hover:text-purple-600 dark:group-hover:text-purple-500">
+                  <BarChartBig/>
+                  </div>
+
+               <span className="flex-1 ms-3 whitespace-nowrap">RH</span>
             </a>
          </li>
          <li>

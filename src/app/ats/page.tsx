@@ -7,7 +7,6 @@ import { LineGraph } from "../components/linegraph";
 import { BarChart } from "../components/barchart";
 import { PieGraph } from "../components/piechart";
 import { AreaCharts } from "../components/areachart";
-import { ModeToggle } from "@/components/toggle";
 import { RadialBart } from "@/app/components/radialbartchart";
 import { Piepadding } from "@/app/components/piechartpadding";
 import { BarChart3, LineChart, PieChart, Check, X, AreaChart, BarChartBig, User, CandlestickChart, BarChartHorizontal, BarChartHorizontalBig, BarChart4 } from "lucide-react";

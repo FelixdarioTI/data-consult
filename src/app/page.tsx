@@ -30,7 +30,7 @@ function Home() {
         const { token, usuario } = response.data; 
         localStorage.setItem('token', token);
         localStorage.setItem('user', JSON.stringify(usuario));
-        router.push('/bne');
+        router.push('/bne-cia');
       })
       .catch(error => {
         setError("Erro ao fazer login");
@@ -91,7 +91,7 @@ function Home() {
                 </div>
               </div>
               <div className="flex items-center justify-between">
-              <a href="cadastro"><p className="underline text-sm text-gray-600 dark:text-white">Não tem conta?</p></a>
+              <a href="https://form.asana.com/?k=7Ay5zAO_05OhqWLYYQp1iA&d=1198730932183790"><p className="underline text-sm text-gray-600 dark:text-white">Não tem conta?</p></a>
                 <button className="inline-block rounded-lg bg-purple-500 px-5 py-3 text-sm font-medium text-white focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50" type="submit">Login</button>
               </div>
             </form>
